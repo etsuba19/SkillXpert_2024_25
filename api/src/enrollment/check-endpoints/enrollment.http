@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ### Create new enrollment
 POST http://localhost:3000/api/enrollment HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJmaXJzdG5hbWUiOiJBYmViZSIsImxhc3RuYW1lIjoiS2ViZWRlIiwiZW1haWwiOiJhYmViZS5rZWJlZGVAZ21haWwuY29tIn0sImlhdCI6MTY3NjA1MzA4NCwiZXhwIjoxNjc2MDYzMDg0fQ.xPjvJkPIooQc4QlYDBh_aUgJKpuX7gxzbSyRwbdIG7Q
@@ -28,4 +29,36 @@ Content-Type: application/json
 ### Delete enrollment
 DELETE  http://localhost:3000/api/enrollment/1 HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJmaXJzdG5hbWUiOiJBYmViZSIsImxhc3RuYW1lIjoiS2ViZWRlIiwiZW1haWwiOiJhYmViZS5rZWJlZGVAZ21haWwuY29tIn0sImlhdCI6MTY3NjA1MzA4NCwiZXhwIjoxNjc2MDYzMDg0fQ.xPjvJkPIooQc4QlYDBh_aUgJKpuX7gxzbSyRwbdIG7Q
+=======
+### Create new enrollment
+POST http://localhost:3000/api/enrollment HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJmaXJzdG5hbWUiOiJBYmViZSIsImxhc3RuYW1lIjoiS2ViZWRlIiwiZW1haWwiOiJhYmViZS5rZWJlZGVAZ21haWwuY29tIn0sImlhdCI6MTY3NjA1MzA4NCwiZXhwIjoxNjc2MDYzMDg0fQ.xPjvJkPIooQc4QlYDBh_aUgJKpuX7gxzbSyRwbdIG7Q
+Content-Type: application/json
+
+{
+    "courseId": 2,
+    "deadline": "2024-04-04"
+}
+
+
+### Get user enrollments
+GET http://localhost:3000/api/enrollment HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJmaXJzdG5hbWUiOiJBYmViZSIsImxhc3RuYW1lIjoiS2ViZWRlIiwiZW1haWwiOiJhYmViZS5rZWJlZGVAZ21haWwuY29tIn0sImlhdCI6MTY3NjA1MzA4NCwiZXhwIjoxNjc2MDYzMDg0fQ.xPjvJkPIooQc4QlYDBh_aUgJKpuX7gxzbSyRwbdIG7Q
+
+
+### Update enrollment deadline
+PUT http://localhost:3000/api/enrollment/1 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJmaXJzdG5hbWUiOiJBYmViZSIsImxhc3RuYW1lIjoiS2ViZWRlIiwiZW1haWwiOiJhYmViZS5rZWJlZGVAZ21haWwuY29tIn0sImlhdCI6MTY3NjA1MzA4NCwiZXhwIjoxNjc2MDYzMDg0fQ.xPjvJkPIooQc4QlYDBh_aUgJKpuX7gxzbSyRwbdIG7Q
+Content-Type: application/json
+
+{    
+    "deadline": "2023-04-04"
+}
+
+
+
+### Delete enrollment
+DELETE  http://localhost:3000/api/enrollment/1 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJmaXJzdG5hbWUiOiJBYmViZSIsImxhc3RuYW1lIjoiS2ViZWRlIiwiZW1haWwiOiJhYmViZS5rZWJlZGVAZ21haWwuY29tIn0sImlhdCI6MTY3NjA1MzA4NCwiZXhwIjoxNjc2MDYzMDg0fQ.xPjvJkPIooQc4QlYDBh_aUgJKpuX7gxzbSyRwbdIG7Q
+>>>>>>> c3eb6f688668f3d5bed6b84d1d919a0c420d1d4a
 Content-Type: application/json
