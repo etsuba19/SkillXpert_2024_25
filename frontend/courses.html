@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Find and take courses online" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <title>Search Courses</title>
+  </head>
+
+  <body>
+    <nav class="navbar sticky-top navbar-expand-md navbar-dark p8">
+      <div class="container-fluid">
+        <img
+          class="navbar-brand"
+          src="images/logo.png"
+          width="60px"
+          height="60px"
+          alt="SkillXpert logo"
+        />
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navigation"
+          aria-controls="navigation"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navigation">
+        <ul class="navbar-nav mx-4 mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="courses.html">Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+
+          <li class="nav-item" id="login-btn">
+            <a class="nav-link" href="login.html">Login</a>
+          </li>
+          <li class="nav-item" id="signup-btn">
+            <a class="nav-link" href="signup.html">Register</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="container">
+      <div class="row">
+        <div class="col-12 mb-4">
+          <div class="hero-card text-center p-5">
+            <h1 class="mb-3">SkillXpert</h1>
+            <p>
+              Unlock unlimited learning and achieve your goals. Start today and
+              all for free.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="card shadow-sm">
+            <img
+              src="./images/courses/hci.jpg"
+              class="card-img-top"
+              alt="Course 1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Human Computer Interaction</h5>
+              <p class="card-text">
+                Explore the principles of human-computer interaction and
+                user-centered design.
+              </p>
+              <a
+                href="enrolled.html?courseId=1"
+                class="btn gts bg-p9 p3"
+                id="enrollBtn1"
+                onclick="enroll(1, 'Human Computer Interaction')"
+                >Enroll</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card shadow-sm">
+            <img
+              src="./images/courses/circuit.jpg"
+              class="card-img-top"
+              alt="Course 2"
+            />
+            <div class="card-body">
+              <h5 class="card-title">
+                Fundamentals of Electrical Circuit and Electronics
+              </h5>
+              <p class="card-text">
+                Learn the fundamentals of electrical circuit design and
+                electronics.
+              </p>
+              <a
+                href="enrolled.html?courseId=2"
+                class="btn gts bg-p9 p3"
+                id="enrollBtn2"
+                onclick="enroll(2, 'Fundamentals of Electrical circuit and Electronics')"
+                >Enroll</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card shadow-sm">
+            <img
+              src="./images/courses/fse.jpg"
+              class="card-img-top"
+              alt="Course 3"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Fundamentals of Software Engineering</h5>
+              <p class="card-text">
+                Master core principles, methodologies, and tools for effective
+                software development.
+              </p>
+              <a
+                href="enrolled.html?courseId=3"
+                class="btn gts bg-p9 p3"
+                id="enrollBtn3"
+                onclick="enroll(3, 'Fundamentals of Software Engineering')"
+                >Enroll</a
+              >
+              <!-- <a
+                href="#"
+                class="btn gts"
+                id="continueBtn3"
+                style="display: none"
+                onclick="window.location.href = 'course_detail.html'"
+                >Continue</a
+              >
+              <a
+                href="#"
+                class="btn gts"
+                id="unenrollBtn3"
+                style="display: none"
+                onclick="unenroll(3)"
+                >Unenroll</a
+              > -->
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card shadow-sm">
+            <img
+              src="./images/courses/comparc.jpg"
+              class="card-img-top"
+              alt="Course 4"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Computer Organization and Architecture</h5>
+              <p class="card-text">
+                Build foundational knowledge of computer architecture and
+                logical design.
+              </p>
+              <a
+                href="enrolled.html?courseId=4"
+                class="btn gts bg-p9 p3"
+                id="enrollBtn4"
+                onclick="enroll(4)"
+                >Enroll</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="container">
+      <footer class="py-5">
+        <div class="row">
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Pagemap</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2">
+                <a href="index.html" class="nav-link p-0 text-muted">Home</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="courses.html" class="nav-link p-0 text-muted"
+                  >Courses</a
+                >
+              </li>
+              <li class="nav-item mb-2">
+                <a href="about.html" class="nav-link p-0 text-muted"
+                  >About us</a
+                >
+              </li>
+              <li class="nav-item mb-2">
+                <a href="contact.html" class="nav-link p-0 text-muted"
+                  >Contact us</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Please Visit</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2">
+                <a href="https://roadmap.sh/" class="nav-link p-0 text-muted"
+                  >Developer Roadmap</a
+                >
+              </li>
+
+              <li class="nav-item mb-2">
+                <a
+                  href="https://www.freecodecamp.org/"
+                  class="nav-link p-0 text-muted"
+                  >freeCodeCamp</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top"
+        >
+          <p>Copyright &copy; SkillXpert developers - 2025</p>
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3">
+              <a href="https://facebook.com">
+                <img
+                  class="icon"
+                  src="images/icons/facebook.png"
+                  alt="Facebook icon"
+                />
+              </a>
+            </li>
+            <li class="ms-3">
+              <a href="https://twitter.com">
+                <img
+                  class="icon"
+                  src="images/icons/twitter.png"
+                  alt="Twitter icon"
+                />
+              </a>
+            </li>
+            <li class="ms-3">
+              <a href="https://youtube.com">
+                <img
+                  class="icon"
+                  src="images/icons/youtube.png"
+                  alt="Youtube icon"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/errorhandler.js"></script>
+    <script src="js/auth/auth.js"></script>
+    <script src="js/enrollment/course.js"></script>
+    <script src="js/enrollment/enroll.js"></script>
+    <script src="js/auth/auth-ui.js"></script>
+    <script src="js/ui/card.ui.js"></script>
+    <script src="js/ui/search.ui.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
