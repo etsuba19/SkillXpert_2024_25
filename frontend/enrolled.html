@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkillsXpert Courses</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navbar Section -->
+    <nav class="navbar sticky-top navbar-expand-md navbar-dark p8">
+      <div class="container-fluid">
+        <img
+          class="navbar-brand"
+          src="images/logo.png"
+          width="60px"
+          height="60px"
+          alt="SkillXpert logo"
+        />
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navigation"
+          aria-controls="navigation"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navigation">
+        <ul class="navbar-nav mx-4 mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="courses.html">Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+
+          <li class="nav-item" id="login-btn">
+            <a class="nav-link" href="login.html">Login</a>
+          </li>
+          <li class="nav-item" id="signup-btn">
+            <a class="nav-link" href="signup.html">Register</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="d-flex align-items-center ms-3">
+      <button
+        class="btn btn-brand btn-sm me-2 bg-p9 p3 mt-3"
+        onclick="Unenroll()"
+      >
+        Unenroll
+      </button>
+    </div>
+    <!-- Content Section -->
+    <div class="container mt-4">
+      <div id="courseContent" style="margin-bottom: 70px">
+        <!-- Dynamic content will be loaded here -->
+      </div>
+    </div>
+
+    <div class="container">
+      <footer class="py-5">
+        <div class="row">
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Pagemap</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2">
+                <a href="index.html" class="nav-link p-0 text-muted">Home</a>
+              </li>
+              <li class="nav-item mb-2">
+                <a href="courses.html" class="nav-link p-0 text-muted"
+                  >Courses</a
+                >
+              </li>
+              <li class="nav-item mb-2">
+                <a href="about.html" class="nav-link p-0 text-muted"
+                  >About us</a
+                >
+              </li>
+              <li class="nav-item mb-2">
+                <a href="contact.html" class="nav-link p-0 text-muted"
+                  >Contact us</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Please Visit</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2">
+                <a href="https://roadmap.sh/" class="nav-link p-0 text-muted"
+                  >Developer Roadmap</a
+                >
+              </li>
+
+              <li class="nav-item mb-2">
+                <a
+                  href="https://www.freecodecamp.org/"
+                  class="nav-link p-0 text-muted"
+                  >freeCodeCamp</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top"
+        >
+          <p>Copyright &copy; SkillXpert developers - 2025</p>
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3">
+              <a href="https://facebook.com">
+                <img
+                  class="icon"
+                  src="images/icons/facebook.png"
+                  alt="Facebook icon"
+                />
+              </a>
+            </li>
+            <li class="ms-3">
+              <a href="https://twitter.com">
+                <img
+                  class="icon"
+                  src="images/icons/twitter.png"
+                  alt="Twitter icon"
+                />
+              </a>
+            </li>
+            <li class="ms-3">
+              <a href="https://youtube.com">
+                <img
+                  class="icon"
+                  src="images/icons/youtube.png"
+                  alt="Youtube icon"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS -->
+
+    <script>
+      // Default cards content
+      // const defaultCourses = [
+      //   {
+      //     title: "Computer Organization and Architecture",
+      //     image: "images/comparc.jpg",
+      //     description:
+      //       "Learn the fundamentals of computer systems, architecture, and more.",
+      //     btnValue: "1",
+      //   },
+      //   {
+      //     title: "Human Computer Interaction",
+      //     image: "images/hci.jpg",
+      //     description:
+      //       "Understand the interaction between humans and computers.",
+      //     btnValue: "2",
+      //   },
+      //   {
+      //     title: "Fundamentals of Electrical Circuits",
+      //     image: "images/circuit.avif",
+      //     description:
+      //       "Master the basics of electrical circuits and their components.",
+      //     btnValue: "3",
+      //   },
+      //   {
+      //     title: "Fundamentals of Software Engineering",
+      //     image: "images/sw.webp",
+      //     description:
+      //       "Explore the principles of software engineering and development.",
+      //     btnValue: "4",
+      //   },
+      // ];
+
+      // Course content
+      const urlParams = new URLSearchParams(window.location.search);
+      const courseId = urlParams.get("courseId");
+      const courses = {
+        4: {
+          title: "Computer Organization and Architecture",
+          video:
+            "https://www.youtube.com/embed/Ol8D69VKX2k?si=4JX2U2n-Wk8VMNRq",
+          notes: [
+            {
+              topic: "Introduction to Computer Architecture",
+              content:
+                "Computer architecture refers to the design and organization of computer systems. It involves the structure of the hardware and the interaction between various components like the CPU, memory, and input/output devices.",
+            },
+            {
+              topic: "Binary Systems",
+              content:
+                "Binary systems use two digits (0 and 1). Binary is the fundamental language of computers, where each binary digit (bit) represents an electrical state.",
+            },
+            {
+              topic: "CPU Design",
+              content:
+                "The Central Processing Unit (CPU) is the brain of the computer. It performs arithmetic and logic operations and controls data flow between the memory and input/output devices.",
+            },
+            {
+              topic: "Memory Hierarchy",
+              content:
+                "Memory hierarchy in computer architecture defines the relationship between different levels of memory, from the fastest but smallest (registers) to the slowest but largest (hard drive).",
+            },
+            {
+              topic: "Instruction Set Architecture (ISA)",
+              content:
+                "ISA defines the set of instructions that a CPU can understand. It serves as the bridge between software and hardware, allowing programmers to write machine-level code.",
+            },
+          ],
+          quiz: [
+            {
+              question: "What is the basic unit of binary numbers?",
+              options: ["Byte", "Bit", "Kilobyte", "Gigabyte"],
+              answer: "Bit",
+            },
+            {
+              question: "What does the CPU stand for?",
+              options: [
+                "Central Process Unit",
+                "Central Programming Unit",
+                "Central Processing Unit",
+                "Central Performance Unit",
+              ],
+              answer: "Central Processing Unit",
+            },
+            {
+              question:
+                "Which of the following is part of the memory hierarchy?",
+              options: ["RAM", "CPU", "Hard Drive", "Monitor"],
+              answer: "RAM",
+            },
+            {
+              question:
+                "What is the purpose of the Instruction Set Architecture?",
+              options: [
+                "To define the set of CPU instructions",
+                "To store data",
+                "To execute programs",
+                "To store instructions",
+              ],
+              answer: "To define the set of CPU instructions",
+            },
+            {
+              question: "Which system uses binary digits?",
+              options: ["Humans", "Computers", "Animals", "Plants"],
+              answer: "Computers",
+            },
+          ],
+        },
+
+        1: {
+          title: "Human-Computer Interaction (HCI)",
+          video:
+            "https://www.youtube.com/embed/yNzLBI0wsGU?si=69rcmRdClsjDxZZx",
+          notes: [
+            {
+              topic: "What is HCI?",
+              content:
+                "Human-Computer Interaction (HCI) focuses on the design and evaluation of user interfaces. It involves understanding how users interact with computers and designing interfaces that are intuitive and easy to use.",
+            },
+            {
+              topic: "Usability Principles",
+              content:
+                "Usability principles guide the design of systems, ensuring they are user-friendly. Principles like simplicity, consistency, and feedback ensure users have a smooth experience.",
+            },
+            {
+              topic: "User-Centered Design",
+              content:
+                "User-Centered Design (UCD) is a design philosophy that places the user’s needs at the center of the design process. This approach involves continuous user feedback during the development phase.",
+            },
+            {
+              topic: "Interaction Styles",
+              content:
+                "Interaction styles refer to the ways users interact with computers. Examples include command-line interfaces (CLI), graphical user interfaces (GUI), and voice interfaces.",
+            },
+            {
+              topic: "Accessibility",
+              content:
+                "Accessibility in HCI refers to designing systems that are usable by people with disabilities. This includes features like screen readers and alternative input methods.",
+            },
+          ],
+          quiz: [
+            {
+              question: "What does HCI stand for?",
+              options: [
+                "Human-Computer Interaction",
+                "Human-Communication Interface",
+                "Hard-Computer Interaction",
+                "Hardware Computing Interface",
+              ],
+              answer: "Human-Computer Interaction",
+            },
+            {
+              question: "What is a key principle of usability?",
+              options: [
+                "Complexity",
+                "Consistency",
+                "Difficulty",
+                "Invisibility",
+              ],
+              answer: "Consistency",
+            },
+            {
+              question: "Which of these is an example of a GUI?",
+              options: [
+                "Windows",
+                "Command Prompt",
+                "Voice Assistant",
+                "All of the above",
+              ],
+              answer: "Windows",
+            },
+            {
+              question: "What does UCD focus on?",
+              options: [
+                "Designing for developers",
+                "Designing for users",
+                "Designing for hardware",
+                "Designing for programmers",
+              ],
+              answer: "Designing for users",
+            },
+            {
+              question: "Which of the following is related to accessibility?",
+              options: [
+                "Screen readers",
+                "Touchscreen",
+                "Keyboard shortcuts",
+                "Bluetooth",
+              ],
+              answer: "Screen readers",
+            },
+          ],
+        },
+
+        2: {
+          title: "Fundamentals of Electrical Circuits",
+          video: "https://www.youtube.com/embed/video3",
+          notes: [
+            {
+              topic: "Introduction to Electrical Circuits",
+              content:
+                "Electrical circuits consist of components like resistors, capacitors, inductors, and sources of power. They allow electricity to flow and perform work in devices.",
+            },
+            {
+              topic: "Ohm's Law",
+              content:
+                "Ohm's Law states that the current passing through a conductor between two points is directly proportional to the voltage across the two points and inversely proportional to the resistance.",
+            },
+            {
+              topic: "Kirchhoff's Laws",
+              content:
+                "Kirchhoff’s Voltage Law (KVL) states that the sum of electrical potential differences (voltages) around any closed circuit is zero. Kirchhoff’s Current Law (KCL) states that the total current entering a junction is equal to the total current leaving.",
+            },
+            {
+              topic: "Series and Parallel Circuits",
+              content:
+                "In series circuits, components are connected end-to-end, so current flows through all components. In parallel circuits, components are connected across common points, allowing multiple paths for current.",
+            },
+            {
+              topic: "Capacitors and Inductors",
+              content:
+                "Capacitors store electrical energy temporarily and release it later. Inductors store energy in a magnetic field and resist changes in current.",
+            },
+          ],
+          quiz: [
+            {
+              question: "What does Ohm's Law relate?",
+              options: [
+                "Voltage, Current, and Power",
+                "Voltage, Current, and Resistance",
+                "Current, Resistance, and Capacitance",
+                "Voltage, Power, and Inductance",
+              ],
+              answer: "Voltage, Current, and Resistance",
+            },
+            {
+              question: "What is the unit of resistance?",
+              options: ["Ohm", "Ampere", "Volt", "Watt"],
+              answer: "Ohm",
+            },
+            {
+              question: "Which of these is a law in electrical circuits?",
+              options: [
+                "Newton's Law",
+                "Kirchhoff's Law",
+                "Faraday's Law",
+                "Hooke's Law",
+              ],
+              answer: "Kirchhoff's Law",
+            },
+            {
+              question: "What does a capacitor do?",
+              options: [
+                "Stores energy",
+                "Controls voltage",
+                "Resists current",
+                "Provides power",
+              ],
+              answer: "Stores energy",
+            },
+            {
+              question: "What happens in a parallel circuit?",
+              options: [
+                "The current is the same across all components",
+                "The voltage is the same across all components",
+                "The power is shared equally",
+                "The resistance is the same across all components",
+              ],
+              answer: "The voltage is the same across all components",
+            },
+          ],
+        },
+
+        3: {
+          title: "Fundamentals of Software Engineering",
+          video: "https://www.youtube.com/embed/video4",
+          notes: [
+            {
+              topic: "Software Development Life Cycle (SDLC)",
+              content:
+                "SDLC refers to the process of planning, creating, testing, and deploying software. It includes several phases: requirements gathering, system design, coding, testing, deployment, and maintenance.",
+            },
+            {
+              topic: "Agile Methodology",
+              content:
+                "Agile is a popular software development methodology that focuses on iterative development, collaboration, and flexibility. It promotes frequent releases and adaptability to changes.",
+            },
+            {
+              topic: "Waterfall Model",
+              content:
+                "The Waterfall Model is a traditional SDLC model where each phase is completed sequentially. Once a phase is finished, the project moves to the next phase with minimal feedback loops.",
+            },
+            {
+              topic: "Version Control",
+              content:
+                "Version control systems like Git help developers manage changes to source code over time. They allow developers to collaborate, track changes, and revert to previous versions of the code.",
+            },
+            {
+              topic: "Testing and Debugging",
+              content:
+                "Testing and debugging are crucial steps in SDLC. Testing ensures the software functions as expected, while debugging helps identify and fix errors in the code.",
+            },
+          ],
+          quiz: [
+            {
+              question: "Which of these is a phase in SDLC?",
+              options: ["Coding", "Testing", "Deployment", "All of the above"],
+              answer: "All of the above",
+            },
+            {
+              question: "What does Agile promote?",
+              options: [
+                "Iterative development",
+                "Fixed development schedule",
+                "Only user feedback",
+                "Complete reliance on documentation",
+              ],
+              answer: "Iterative development",
+            },
+            {
+              question:
+                "What is the main characteristic of the Waterfall Model?",
+              options: [
+                "Sequential process",
+                "Iterative process",
+                "Flexible process",
+                "No documentation",
+              ],
+              answer: "Sequential process",
+            },
+            {
+              question: "Which tool is used for version control?",
+              options: ["Git", "Jira", "Slack", "Trello"],
+              answer: "Git",
+            },
+            {
+              question: "What is the goal of testing?",
+              options: [
+                "Find bugs",
+                "Ensure functionality",
+                "Improve speed",
+                "Improve security",
+              ],
+              answer: "Ensure functionality",
+            },
+          ],
+        },
+      };
+
+      // Function to render the default cards
+      function renderDefaultCards() {
+        const courseContent = document.getElementById("courseContent");
+        courseContent.innerHTML = ""; // Clear current content
+
+        const row = document.createElement("div");
+        row.classList.add("row", "gy-4"); // Bootstrap grid classes for spacing
+
+        defaultCourses.forEach((course) => {
+          const col = document.createElement("div");
+          col.classList.add("col-12", "col-sm-6", "col-md-6", "col-lg-3");
+          // Bootstrap grid classes for responsive behavior:
+          // col-12: Full width on extra small screens
+          // col-sm-6: 2 cards per row on small screens (tablets)
+          // col-md-6: 2 cards per row on medium screens (smaller desktops)
+          // col-lg-3: 4 cards per row on large screens (desktops)
+
+          col.innerHTML = `
+        <div class="card shadow-sm">
+            <img src="${course.image}" class="card-img-top" alt="${course.title}">
+            <div class="card-body">
+            <h5 class="card-title">${course.title}</h5>
+            <p class="card-text">${course.description}</p>
+            <button class="btn btn-brand" onclick="viewCourse('${course.btnValue}')">View Course</button>
+            </div>
+        </div>
+        `;
+          row.appendChild(col);
+        });
+
+        courseContent.appendChild(row);
+      }
+
+      // Function to display course details based on the provided courseId
+      function viewCourse(courseId) {
+        const courseContent = document.getElementById("courseContent");
+        const course = courses[courseId];
+
+        if (!course) {
+          courseContent.innerHTML = "<p>Course not found.</p>";
+          return;
+        }
+
+        courseContent.innerHTML = `
+            <div class="container mt-4">
+            <div class="row">
+                <!-- Video Section -->
+                <div class="col-md-8">
+                <h2>${course.title}</h2>
+                <div class="video-container mb-4">
+                    <iframe src="${
+                      course.video
+                    }" frameborder="0" allowfullscreen class="w-100" style="height: 400px;"></iframe>
+                </div>
+                </div>
+
+                <!-- Topics Section -->
+                <div class="col-md-4">
+                <h3>Topics</h3>
+                <div class="accordion" id="notesAccordion">
+                    ${course.notes
+                      .map(
+                        (note, index) => `
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading${index}">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${index}" aria-expanded="false" aria-controls="collapse${index}">
+                                ${note.topic}
+                            </button>
+                            </h2>
+                            <div id="collapse${index}" class="accordion-collapse collapse" aria-labelledby="heading${index}" data-bs-parent="#notesAccordion">
+                            <div class="accordion-body">
+                                ${note.content}
+                            </div>
+                            </div>
+                        </div>
+                        `
+                      )
+                      .join("")}
+                </div>
+                </div>
+            </div>
+
+            <!-- Quiz Section -->
+                <div class="mt-5">
+                <h3>Quiz</h3>
+                <div class="accordion" id="quizAccordion">
+                    <div class="accordion-item">
+                    <h2 class="accordion-header" id="quizHeading">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#quizCollapse" aria-expanded="false" aria-controls="quizCollapse">
+                        Quiz Questions
+                        </button>
+                    </h2>
+                    <div id="quizCollapse" class="accordion-collapse collapse" aria-labelledby="quizHeading" data-bs-parent="#quizAccordion">
+                        <div class="accordion-body">
+                        ${course.quiz
+                          .map(
+                            (q, index) => `
+                                <div class="mb-3">
+                                <p><strong>Question ${index + 1}: ${
+                              q.question
+                            }</strong></p>
+                                ${q.options
+                                  .map(
+                                    (option) => `
+                                        <div class="form-check">
+                                        <input type="radio" name="quiz${index}" class="form-check-input" value="${option}" id="quiz${index}_${option}">
+                                        <label class="form-check-label" for="quiz${index}_${option}">${option}</label>
+                                        </div>`
+                                  )
+                                  .join("")}
+                                </div>`
+                          )
+                          .join("")}
+                        </div>
+                    </div>
+                    </div>
+                <div>
+    <button class="btn mt-3" onclick="checkQuiz('${courseId}')" style=" color: #8512E3; font-size: 16px; font-weight: bold; cursor: pointer; margin: 0 0 15px 10px;"> Submit Quiz </button>
+
+    <p id="quizResult" class="mt-3"></p>
+</div>
+<div style="text-align: center;">
+    <button class="btn btn-brand mt-4 bg-p9 p3" onclick="redirectToCourses()" style="font-weight:bold; padding: 10px 16px;">
+        Back to Courses
+    </button>
+</div>
+                     </div>
+                `;
+      }
+      // Function to redirect to courses.html
+      function redirectToCourses() {
+        window.location.href = "courses.html"; // Redirect to courses.html
+      }
+      function Unenroll() {
+        delete_enrollment(courseId);
+        window.location.href = "courses.html"; // Redirect to courses.html
+      }
+
+      // Function to check quiz answers and calculate the user's score
+      function checkQuiz(courseId) {
+        const course = courses[courseId];
+        if (!course) return;
+
+        let score = 0;
+        const totalQuestions = course.quiz.length;
+
+        course.quiz.forEach((q, index) => {
+          const selectedOption = document.querySelector(
+            `input[name="quiz${index}"]:checked`
+          );
+          if (selectedOption && selectedOption.value === q.answer) {
+            score++;
+          }
+        });
+
+        const resultElement = document.getElementById("quizResult");
+        resultElement.innerHTML = `<strong>Your Score:</strong> ${score} / ${totalQuestions}`;
+        resultElement.style.color = score === totalQuestions ? "green" : "red";
+      }
+
+      // Function to render default course cards
+      viewCourse(courseId);
+    </script>
+    <script src="js/enrollment/enroll.js"></script>
+  </body>
+</html>
